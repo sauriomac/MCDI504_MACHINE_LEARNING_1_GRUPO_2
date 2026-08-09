@@ -13,3 +13,6 @@ __pycache__/
 
 # Checkpoints generados por Jupyter
 .ipynb_checkpoints/
+
+# Archivos generados por macOS
+.DS_Store
