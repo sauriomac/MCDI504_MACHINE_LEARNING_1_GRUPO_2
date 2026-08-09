@@ -1,0 +1,15 @@
+# Entornos virtuales de Python
+.venv/
+venv/
+env/
+
+# Variables de entorno y secretos locales
+.env
+.env.*
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Checkpoints generados por Jupyter
+.ipynb_checkpoints/
