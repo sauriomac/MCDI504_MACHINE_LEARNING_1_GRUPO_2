@@ -11,3 +11,8 @@ matplotlib==3.10.9
 # Machine Learning y cálculo científico
 scikit-learn==1.7.2
 scipy==1.15.3
+
+# Fase 3 y entrega integrada
+# Los notebooks `notebooks/F3_Clasificacion.ipynb` y
+# `notebooks/F3_RedesNeuronales.ipynb` utilizan las dependencias listadas
+# arriba. No requieren paquetes adicionales para ejecutar sus celdas.
