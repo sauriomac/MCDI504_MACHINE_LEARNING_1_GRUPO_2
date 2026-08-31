@@ -116,6 +116,40 @@ Entregables:
 - Notebook: [`notebooks/F3_RedesNeuronales.ipynb`](notebooks/F3_RedesNeuronales.ipynb)
 - Informe final: [`docs/MCDI504_F3_S03_grupo2.pdf`](docs/MCDI504_F3_S03_grupo2.pdf)
 
+## Fase 4 - Evaluación y validación del modelo
+
+La cuarta fase evalúa las tres arquitecturas MLP de la entrega anterior sobre
+el dataset Titanic. Se utiliza una partición Hold-Out 80/20 estratificada para
+comparar accuracy, precision, recall, F1-score y matrices de confusión. Además,
+el MLP de una capa oculta se valida con `StratifiedKFold(k=5)` para reportar el
+promedio y la variabilidad de las métricas entre folds.
+
+El preprocesamiento se mantiene dentro de un `Pipeline` con
+`ColumnTransformer`: la imputación, la codificación y el escalamiento se
+ajustan únicamente con datos de entrenamiento y vuelven a ajustarse dentro de
+cada fold. La ejecución reproducida utiliza `RANDOM_STATE = 42`.
+
+Resultados Hold-Out reproducidos:
+
+| Modelo | Accuracy | Precision | Recall | F1-score |
+|---|---:|---:|---:|---:|
+| MLP 1 capa oculta | 0.7821 | 0.7679 | 0.6232 | 0.6880 |
+| MLP 2 capas ocultas | 0.8156 | 0.7903 | 0.7101 | 0.7481 |
+| MLP 3 capas ocultas | 0.8045 | 0.7931 | 0.6667 | 0.7244 |
+
+La validación K-Fold del MLP de una capa obtiene accuracy promedio de 0.8258
+con desviación estándar de 0.0312, y F1-score promedio de 0.7563 con desviación
+estándar de 0.0458. Las advertencias de convergencia quedan registradas como
+limitación del experimento.
+
+Entregables:
+
+- Notebook ejecutado: [`notebooks/F4_Evaluacion_Sumativa.ipynb`](notebooks/F4_Evaluacion_Sumativa.ipynb)
+- Informe final: [`docs/MCDI504_S4_2_GRUPO2-2.pdf`](docs/MCDI504_S4_2_GRUPO2-2.pdf)
+- Dataset local: [`data/titanic.csv`](data/titanic.csv)
+- Documentación del dataset: [`data/README_datos.md`](data/README_datos.md)
+- Figuras: `figures/fase4_evaluacion/`
+
 ## Estructura del repositorio
 
 ```text
@@ -124,6 +158,11 @@ docs/
     MCDI504_S2_1_GRUPO2.pdf
     MCDI504_S3_ENTREGABLE_GRUPO2.pdf
     MCDI504_F3_S03_grupo2.pdf
+    MCDI504_S4_2_GRUPO2-2.pdf
+
+data/
+    README_datos.md
+    titanic.csv
 
 figures/
     fase1_definicion/
@@ -134,17 +173,20 @@ figures/
         Figuras generadas por F3_Clasificacion.ipynb
     fase3_redes_neuronales/
         Figuras generadas por F3_RedesNeuronales.ipynb
+    fase4_evaluacion/
+        Figuras generadas por F4_Evaluacion_Sumativa.ipynb
 
 notebooks/
     F1_Definicion.ipynb
     F2_Regresion.ipynb
     F3_Clasificacion.ipynb
     F3_RedesNeuronales.ipynb
+    F4_Evaluacion_Sumativa.ipynb
 
 requirements.txt
 ```
 
-Los notebooks F1, F2 y F3 muestran cada gráfico en pantalla con `plt.show()` y,
+Los notebooks F1, F2, F3 y F4 muestran cada gráfico en pantalla con `plt.show()` y,
 antes de mostrarlo, guardan una copia PNG con `plt.savefig()` en su subcarpeta
 correspondiente de `figures/`. Las subcarpetas se crean automáticamente al
 ejecutar las celdas iniciales de cada notebook.
@@ -181,7 +223,7 @@ ejecutar el notebook correspondiente mediante **Restart Kernel and Run All**.
 
 ## Reproducibilidad
 
-Los notebooks de las Fases 2 y 3 utilizan una semilla única
+Los notebooks de las Fases 2, 3 y 4 utilizan una semilla única
 (`RANDOM_STATE = 42`) en las particiones y en los modelos con componentes
 aleatorios. El escalamiento se ajusta exclusivamente con los datos de
 entrenamiento para evitar fuga de información. Las tablas, métricas y figuras

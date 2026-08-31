@@ -12,7 +12,8 @@ matplotlib==3.10.9
 scikit-learn==1.7.2
 scipy==1.15.3
 
-# Fase 3 y entrega integrada
+# Fases 3 y 4 y entrega integrada
 # Los notebooks `notebooks/F3_Clasificacion.ipynb` y
-# `notebooks/F3_RedesNeuronales.ipynb` utilizan las dependencias listadas
+# `notebooks/F3_RedesNeuronales.ipynb`, además de
+# `notebooks/F4_Evaluacion_Sumativa.ipynb`, utilizan las dependencias listadas
 # arriba. No requieren paquetes adicionales para ejecutar sus celdas.
