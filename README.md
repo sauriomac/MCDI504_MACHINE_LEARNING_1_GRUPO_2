@@ -145,7 +145,7 @@ limitación del experimento.
 Entregables:
 
 - Notebook ejecutado: [`notebooks/F4_Evaluacion_Sumativa.ipynb`](notebooks/F4_Evaluacion_Sumativa.ipynb)
-- Informe final: [`docs/MCDI504_S4_2_GRUPO2-2.pdf`](docs/MCDI504_S4_2_GRUPO2-2.pdf)
+- Informe final: [`docs/MCDI504_S4_2_GRUPO2.pdf`](docs/MCDI504_S4_2_GRUPO2.pdf)
 - Dataset local: [`data/titanic.csv`](data/titanic.csv)
 - Documentación del dataset: [`data/README_datos.md`](data/README_datos.md)
 - Figuras: `figures/fase4_evaluacion/`
@@ -158,7 +158,7 @@ docs/
     MCDI504_S2_1_GRUPO2.pdf
     MCDI504_S3_ENTREGABLE_GRUPO2.pdf
     MCDI504_F3_S03_grupo2.pdf
-    MCDI504_S4_2_GRUPO2-2.pdf
+    MCDI504_S4_2_GRUPO2.pdf
 
 data/
     README_datos.md
